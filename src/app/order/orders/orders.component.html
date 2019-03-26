@@ -1,0 +1,13 @@
+<div fxLayout="row" fxLayoutAlign="space-around start">
+  <div fxFlex="90%">
+    <mat-list>
+      <h2 mat-subheader>Orders</h2>
+      <mat-list-item *ngFor="let order of orders">
+        <h4 mat-line>{{order._id}}</h4>
+        <h4 mat-line>Number: {{order.number}}</h4>
+        <h4 mat-line>Description: {{order.description}}</h4>
+        <h4 mat-line>Status: {{order.status}}</h4>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>
