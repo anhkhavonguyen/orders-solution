@@ -1,0 +1,50 @@
+version: '3.4'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: "mongodb"
+    networks:
+      - orders-solution-network
+    environment:
+      - MONGO_DATA_DIR=/data/orders-db
+      - MONGO_DATA_DIR=/data/payments-db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+        - data-orders-db:/data/orders-db
+        - data-payments-db:/data/payments-db
+    command: mongod --smallfiles --logpath=/dev/null # --quiet
+
+  order-web:
+    image: ${DOCKER_REGISTRY}orderweb
+    networks:
+      - orders-solution-network
+    build:
+      context: orders-solution-client
+      dockerfile: Dockerfile
+
+  order-api:
+    image: ${DOCKER_REGISTRY}orderapi
+    networks:
+      - orders-solution-network
+    build:
+      context: orders-service
+      dockerfile: Dockerfile
+  
+  payment-api:
+    image: ${DOCKER_REGISTRY}paymentapi
+    networks:
+      - orders-solution-network
+    build:
+      context: payments-service
+      dockerfile: Dockerfile    
+
+networks:
+  orders-solution-network:
+  
+volumes:
+  data-db:
+    
+    
+    
+

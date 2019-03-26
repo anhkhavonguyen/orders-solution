@@ -1,0 +1,19 @@
+version: '3.4'
+  
+services:
+  mongodb:
+    ports:
+      - 27017:27017
+
+  order-web:
+    ports:
+      - "4200:3000"
+
+  order-api:
+    ports:
+      - "4000:3000"
+
+  payment-api:
+    ports:
+      - "3000:3000"
+      

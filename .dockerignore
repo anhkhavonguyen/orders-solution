@@ -1,0 +1,14 @@
+.dockerignore
+.env
+.git
+.gitignore
+.vs
+.vscode
+docker-compose*.yml
+*.md
+**/node_modules/
+**/bower_components/
+**/.toolstarget
+**/node_modules
+**/e2e
+**/tests

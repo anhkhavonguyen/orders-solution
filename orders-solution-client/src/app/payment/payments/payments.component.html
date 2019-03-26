@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="space-around start">
+  <div fxFlex="90%">
+    <mat-list>
+      <h4 mat-subheader>Payments</h4>
+      <mat-list-item *ngFor="let payment of payments">
+        <h4 mat-line>OrderId: {{payment.orderId}}</h4>
+        <h4 mat-line>Method: {{payment.method}}</h4>
+        <h4 mat-line>State: {{payment.state}}</h4>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

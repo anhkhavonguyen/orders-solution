@@ -9,7 +9,6 @@ const logger = require('../logging/logger');
 // setup global middleware here
 module.exports = (app) => {
   app.use(cors());
-  app.use(favicon(path.join(__dirname, '../../src/favicon.ico')));
   app.use(require('morgan')({ "stream": logger.stream }));
   app.use(bodyParser.json());
   app.use(bodyParser.urlencoded({ extended: false }));

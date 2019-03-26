@@ -1,0 +1,26 @@
+<div fxLayout="row" fxLayoutAlign="space-around start" class="container-top">
+  <div fxFlex="60%">
+    <form [formGroup]="addValueForm" (ngSubmit)="add()">
+      <mat-card>
+        <mat-card-header>Create Order</mat-card-header>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>number</mat-label>
+            <input matInput placeholder="number" formControlName="number">
+            <mat-icon matSuffix>format_list_numbered_rtl</mat-icon>
+          </mat-form-field>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>description</mat-label>
+            <input matInput placeholder="description" formControlName="description">
+            <mat-icon matSuffix>description</mat-icon>
+          </mat-form-field>
+          <mat-card-actions fxLayout="column">
+            <button mat-raised-button color="primary" type="submit">
+              Submit
+            </button>
+          </mat-card-actions>
+        </mat-card-content>
+      </mat-card>
+    </form>
+  </div>
+</div>
